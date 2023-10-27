@@ -20,10 +20,9 @@ public class OrdersController {
     private final OrderService orderService;
 
     private final WebClient.Builder webClientBuilder;
-
     @PostMapping
     public ResponseEntity<Boolean> submitOrders(@RequestBody List<CreateOrderRequest> requests) {
-        Boolean allStockAvailable = orderService.submitOrders(requests);
+        Boolean allStockAvailable = orderService.submitOrdersnew(requests);
 
         if (allStockAvailable) {
             return new ResponseEntity<>(true, HttpStatus.OK);
@@ -32,3 +31,7 @@ public class OrdersController {
         }
     }
 }
+
+
+
+
