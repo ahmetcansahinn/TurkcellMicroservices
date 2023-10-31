@@ -1,6 +1,8 @@
 package com.turkcell.product.service.controllers;
 
 import com.turkcell.product.service.dto.request.CreateProductRequest;
+import com.turkcell.product.service.dto.request.CreateProductRequest;
+import com.turkcell.product.service.dto.response.CreateProductResponse;
 import com.turkcell.product.service.dto.response.CreateProductResponse;
 import com.turkcell.product.service.entities.Product;
 import com.turkcell.product.service.services.ProductService;
@@ -24,6 +26,11 @@ public class ProductsController {
     public Boolean getByInventoryCode(@RequestParam String invCode,
                                       @RequestParam int requiredStock){
         return productService.getByInventoryCode(invCode, requiredStock);
+    }
+
+    @GetMapping("deneme")
+    public String deneme(){
+        return "Deneme";
     }
 }
 
